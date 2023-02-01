@@ -147,7 +147,7 @@ CUERPO DOCUMENTO
 
   <div class="login-box-body">
 
-    <p class="login-box-msg">Ingresar al sistema</p>
+    <p class="login-box-msg">Ingresar al sistema proyecto prueba</p>
 <form method="POST" id="frm_login" action="<?php echo htmlspecialchars(strip_tags('lib/Usuario/controladores/UsuarioController.php'));?>">
    
 
