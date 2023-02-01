@@ -192,3 +192,4 @@ CUERPO DOCUMENTO
 
 <script src="vistas/js/funciones_basicas.js"></script>
 </html>
+<?php echo "esta es una prueba de versionamiento";?>
