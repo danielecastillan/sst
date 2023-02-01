@@ -137,8 +137,8 @@ CUERPO DOCUMENTO
   
   <div class="login-logo">
 
- Index Proyecto
- 
+ Index Proyecto base
+ v1.0
 
 
 
