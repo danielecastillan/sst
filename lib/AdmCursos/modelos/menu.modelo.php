@@ -1,6 +1,6 @@
 <?php
 
-require_once "../../Conexion/conexionseven.php";
+ 
 require_once "../../Conexion/conexion.php";
 //require_once "conexion.php";
 
@@ -411,7 +411,7 @@ class ModeloMenu{
                                                                              where
                                                                              config_menu_base.id_padre_config=0
 									    and
-									  menu_perfil_base.id_perfil=$id_perfil
+									  menu_perfil_base.id_perfil=1
 
                                                                          ");
                   $consultas_tmt -> execute();
@@ -432,7 +432,7 @@ class ModeloMenu{
                                                                             where
                                                                              config_menu_base.id_padre_config=$id_config_menu_base
                                                                               and
-                                                                               menu_perfil_base.id_perfil=$id_perfil
+                                                                               menu_perfil_base.id_perfil=1
                                                                          ");
                        
                   $consultas_tmt22 -> execute();

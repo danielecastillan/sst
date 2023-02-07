@@ -170,8 +170,7 @@ class ModeloUsers{
                    
                    
 
-	 
-
+ 
 		
                    //primera consulta recorrido
                    $consultas_tmt = Conexion::conectar()->prepare("     

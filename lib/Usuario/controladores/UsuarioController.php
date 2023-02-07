@@ -21,15 +21,17 @@ if ($opcion == 'Log') {
 				$valor = $_POST["ingUsuario"];
 
 				$respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
+
+				 
                                     echo "Usuario_".$respuesta["usuario"];
-                                    echo "Passwor_".$respuesta["password"];
-                                //   die();
-				if($respuesta["usuario"] == $_POST["ingUsuario"] && $respuesta["password"] == $_POST["ingPassword"]){
+                                    echo "Passwor_".$respuesta["passw"];
+									 
+				if($respuesta["usuario"] == $_POST["ingUsuario"] && $respuesta["passw"] == $_POST["ingPassword"]){
 
 					if($respuesta["estado"] == 1){
 
 						$_SESSION["iniciarSesion"] = "ok";
-						$_SESSION["id"] = $respuesta["id_usuario"];
+						$_SESSION["id"] = $respuesta["id"];
 						$_SESSION["nombre"] = $respuesta["nombre_completo"];
 						$_SESSION["usuario"] = $respuesta["usuario"];
 					        $_SESSION["foto"] = $respuesta["foto"];

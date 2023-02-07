@@ -10,9 +10,15 @@ class ModeloUsuarios{
 
 	static public function MdlMostrarUsuarios($tabla, $item, $valor){
 
+
+		//return $valor;
+		//die();
 		if($item != null){
 
-			$stmt = Conexion::conectar()->prepare("SELECT LTRIM(RTRIM(id)) as id, LTRIM(RTRIM(nombre)) as nombre,LTRIM(RTRIM(usuario)) as usuario,LTRIM(RTRIM(passwor)) as passwor,LTRIM(RTRIM(perfil)) as perfil,LTRIM(RTRIM(foto)) as foto,LTRIM(RTRIM(estado)) as estado,LTRIM(RTRIM(ultimo_login)) as ultimo_login,LTRIM(RTRIM(fecha)) as fecha   FROM  dirproduc_usuarios  where usuario='$valor'");
+			$stmt = Conexion::conectar()->prepare("SELECT LTRIM(RTRIM(id_usuario)) AS id_usuario, LTRIM(RTRIM(nombre_completo)) AS nombre_completo,
+			LTRIM(RTRIM(usuario)) AS usuario,LTRIM(RTRIM(passw)) AS passw,LTRIM(RTRIM(perfil)) AS perfil,
+			LTRIM(RTRIM(foto)) AS foto,LTRIM(RTRIM(estado)) AS estado,LTRIM(RTRIM(ultimo_login)) AS ultimo_login,LTRIM(RTRIM(fecha_creacion)) AS fecha ,id_perfil 
+			 FROM  usuarios  WHERE usuario='$valor'");
 
 			//$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
@@ -22,7 +28,10 @@ class ModeloUsuarios{
 
 		}else{
 
-			$stmt = Conexion::conectar()->prepare("SELECT LTRIM(RTRIM(id)) as id, LTRIM(RTRIM(nombre)) as nombre,LTRIM(RTRIM(usuario)) as usuario,LTRIM(RTRIM(passwor)) as passwor,LTRIM(RTRIM(nombre)) as perfil,LTRIM(RTRIM(foto)) as foto,LTRIM(RTRIM(estado)) as estado,LTRIM(RTRIM(ultimo_login)) as ultimo_login,LTRIM(RTRIM(fecha)) as fecha   FROM dirproduc_usuarios where usuario='$valor'");
+			$stmt = Conexion::conectar()->prepare("SELECT LTRIM(RTRIM(id_usuario)) AS id_usuario, LTRIM(RTRIM(nombre_completo)) AS nombre_completo,
+			LTRIM(RTRIM(usuario)) AS usuario,LTRIM(RTRIM(passw)) AS passw,LTRIM(RTRIM(perfil)) AS perfil,
+			LTRIM(RTRIM(foto)) AS foto,LTRIM(RTRIM(estado)) AS estado,LTRIM(RTRIM(ultimo_login)) AS ultimo_login,LTRIM(RTRIM(fecha_creacion)) AS fecha ,id_perfil 
+			 FROM  usuarios WHERE usuario='$valor'");
 
 			$stmt -> execute();
 
@@ -103,7 +112,10 @@ class ModeloUsuarios{
 
 	static public function mdlActualizarUsuario($tabla, $item1, $valor1, $item2, $valor2){
 
-		$stmt = Conexion::conectar()->prepare(" update usuarios_productos set ultimo_login = GETDATE() where id=$item2");
+
+		 //var_dump(" update usuarios set ultimo_login = GETDATE() where id=$valor2");
+ 
+		$stmt = Conexion::conectar()->prepare(" update usuarios set ultimo_login = NOW() where id_usuario=$valor2");
 		//$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET ultimo_login = GETDATE() WHERE id = $item2");
 		//$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET $item1 = :$item1 WHERE $item2 = :$item2");
 

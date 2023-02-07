@@ -4,7 +4,7 @@ require_once 'lib/Menu/controladores/menu.controlador_1.php';
 //require_once 'lib/Menu/modelos/menu.modelo_1.php';
 
 session_start();
-$usuario =$_SESSION["usuario"];
+//$usuario =$_SESSION["usuario"];
 // var_dump($usuario);
   
 //if ($usuario != NULL || $usuario != '') {
@@ -126,17 +126,7 @@ body {
 
 
 </head>
- <script>
-    $(document).ready(function () {
-     
-    
-   
-  //llamado_menu_general(<?php echo $_SESSION["id_perfil"];?>);
-  // llamado_menu_generalcurso(<?php echo $_SESSION["id_perfil"];?>);
-   llamado_menu_general(<?php echo $_SESSION["id_perfil"];?>);
-    });
- 
- </script>
+
 <!--=====================================
 CUERPO DOCUMENTO
 ======================================-->
@@ -180,7 +170,7 @@ CUERPO DOCUMENTO
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
 					<?php
-
+/*
 					if($_SESSION["foto"] != ""){
 
 						//echo '<img src="'.$_SESSION["foto"].'" class="user-image">';
@@ -188,14 +178,14 @@ CUERPO DOCUMENTO
 					}else{
 
 
-						echo '<img src="vistas/img/usuarios/default/anonymous.png" class="user-image">';
+					//	echo '<img src="vistas/img/usuarios/default/anonymous.png" class="user-image">';
 
-					}
+					}*/
 
 echo '<img src="img/usuario.png" class="user-image">';
 					?>
 						
-						<span class="hidden-xs"><?php  echo $_SESSION["nombre"]; ?></span>
+					<!--	<span class="hidden-xs"><?php // echo $_SESSION["nombre"]; ?></span>-->
 
 					</a>
 
@@ -298,7 +288,7 @@ echo '<img src="img/usuario.png" class="user-image">';
 
 <script src="js/plantilla.js"></script>
 
-<script src="js/funciones_basicas.js"></script>
+<script src="js/funciones_basicas_index.js"></script>
 <script src="lib/productos/js/prod_funcions.js"></script>
 <script src="lib/productos/js/pedidos_funcions.js"></script>
 <script src="lib/factanti/js/fact_anti.js"></script>
@@ -327,4 +317,14 @@ echo '<img src="img/usuario.png" class="user-image">';
  */
 
 ?>
+  <script>
+    $(document).ready(function () {
+     
  
+   
+ 
+   llamado_menu_general_det(1);
+    
+    });
+ 
+ </script>

@@ -14,6 +14,43 @@ function llamado_directorio_producto_externo(){
         });
 }
 
+function llamado_menu_general_det(id_perfil){
+    
+ 
+   
+    var retorno;
+  $.ajax({
+      type: "POST",
+     url: 'lib/Menu/controladores/menucontroller.php',
+      async: false,
+      data: {
+          opcion: "ctrMuestraMenuDinamico",
+          id_perfil:1
+        
+     
+      },
+      success: function (retu) {
+          retorno = retu;
+      }
+
+  });
+alert(retorno);
+  $("#div_con_menu").html(retorno)
+   
+}
+
+
+function llamado_usuarios_menu(){
+  //alert("Llmado directorio productos");
+            $.ajax({
+            type: "POST",
+            url: "lib/Usuario/vistas/registro_the_usuario.php",
+            success: function(response) {
+                $('#contenedor_div_principal').html(response);
+            }
+        });
+}
+
 
 
 function llamado_directorio_producto(){
