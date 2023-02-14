@@ -1,6 +1,6 @@
 <?php
 
-require_once "../../Conexion/conexionseven.php";
+ 
 require_once "../../Conexion/conexion.php";
 //require_once "conexion.php";
 
@@ -57,55 +57,69 @@ class ModeloUsers{
                    
                    
                    
-            
+  /*          
                             $stmtaud = Conexion::conectar()->prepare(" 	
                             SELECT max(id)+1 as valor_id from usuarios
                             ");
+*/
+                         //   $stmtaud -> execute();
 
-                            $stmtaud -> execute();
-
-                            $stmtaudpre= $stmtaud -> fetch();
+                          //  $stmtaudpre= $stmtaud -> fetch();
                  
-                            $valor_id=$stmtaudpre['valor_id'];
+                         //   $valor_id=$stmtaudpre['valor_id'];
                                     
                             $nombre=$data['nombre'];
                             $usuario=$data['usuario'];
                             $passwor=$data['passwor'];
                             $id_perfil=$data['id_perfil'];
                            
+                            $tipo_identificacion=$data['tipo_identificacion'];
+                             $id_identificacion=$data['id_identificacion'];
+                             $fecha_nacimiento=$data['fecha_nacimiento'];
+                             $correo=$data['correo'];
+                        
+ 
+                            $stmtconsultvalanteriores = Conexion::conectar()->prepare("   
                              
-                            
-                            $stmtconsultvalanteriores = Conexion::conectar()->prepare("     
-                                                                                 insert into usuarios (id,nombre,usuario,passwor,perfil,estado,fecha,id_perfil) values
-                                                                                ($valor_id,'$nombre','$usuario','$passwor',3,1,'$fecha',$id_perfil)
-                                    
-                                                                                     ");
-                                                                   //   $stmtconsultvalanteriores -> execute();
-
-                                                          $notas=" insert into usuarios (id,nombre,usuario,passwor,perfil,estado,fecha,id_perfil) values
-                                                                                ($valor_id,'$nombre','$usuario','$passwor',3,1,$fecha',$id_perfil)
-                                    "; 
-                                                 
+                                             INSERT INTO `proyecto_base`.`usuarios`
+                                            (`id_usuario`,`tipo_identificacion`,`identificacion`,`nombre_completo`,
+                                            `fecha_nacimiento`,`correo`,`celular`,`usuario`,`passw`,`perfil`,`id_pais`,`id_depto`,
+                                            `id_muni`,`foto`,`estado`,`ultimo_login`,`fecha_creacion`,`id_perfil`) VALUES 
+                                            ( NULL,'$tipo_identificacion','$id_identificacion','$nombre',NULL,NULL,NULL,'$usuario','$passwor','Administrador',NULL,NULL,
+                                            NULL,NULL,'1',NOW(),NOW(),'1'); 
+                                          ");
+                           /*
+                           
+                            $stmtconsultvalanteriores = Conexion::conectar()->prepare("   
+                             
+                                              INSERT INTO `usuarios`
+                                              ( `tipo_identificacion`,`identificacion`,`nombre_completo`,
+                                              `fecha_nacimiento`,`correo`,`celular`,`usuario`,`passw`,`perfil`,
+                                              `id_pais`,`id_depto`,`id_muni`,`foto`,`estado`,`ultimo_login`,`fecha_creacion`,`id_perfil`) 
+                                              VALUES 
+                                              ( '$tipo_identificacion','$id_identificacion','$nombre',NOW(),'$correo',
+                                              NULL,'$nombre','$passwor','Administrador','1','1','1',NULL,'1',NOW(),NOW(),'$id_perfil'); 
+                                                    ");
+                           
+                           
+                           */                                
+                                                    
                       
-                        
-                        
-                        
-                        
-			//$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
-
+                                                    $consulta="  INSERT INTO `proyecto_base`.`usuarios`
+                                                    (`id_usuario`,`tipo_identificacion`,`identificacion`,`nombre_completo`,
+                                                    `fecha_nacimiento`,`correo`,`celular`,`usuario`,`passw`,`perfil`,`id_pais`,`id_depto`,
+                                                    `id_muni`,`foto`,`estado`,`ultimo_login`,`fecha_creacion`,`id_perfil`) VALUES 
+                                                    ( NULL,'$tipo_identificacion','$id_identificacion','$nombre',NULL,NULL,NULL,'$usuario','$passwor','Administrador',NULL,NULL,
+                                                    NULL,NULL,'1',NOW(),NOW(),'1'); ";
 			if($stmtconsultvalanteriores->execute()){
 
-                            
                       
-                       
-                            
-                            
                             
 			return 1;
 
 		}else{
 
-			return $notas;
+			return $consulta;
 		
 		}
 

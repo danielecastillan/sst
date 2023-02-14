@@ -33,8 +33,7 @@ function llamado_menu_general_det(id_perfil){
           retorno = retu;
       }
 
-  });
-alert(retorno);
+  }); 
   $("#div_con_menu").html(retorno)
    
 }
@@ -50,6 +49,65 @@ function llamado_usuarios_menu(){
             }
         });
 }
+
+
+function llamado_empresas_menu(){
+    //alert("Llmado directorio productos");
+              $.ajax({
+              type: "POST",
+              url: "lib/Empresas/vistas/registro_the_empresas.php",
+              success: function(response) {
+                  $('#contenedor_div_principal').html(response);
+              }
+          });
+  }
+
+  function llamado_trabajadores_menu(){
+    //alert("Llmado directorio productos");
+              $.ajax({
+              type: "POST",
+              url: "lib/Trabajadores/vistas/registro_the_trabajadores.php",
+              success: function(response) {
+                  $('#contenedor_div_principal').html(response);
+              }
+          });
+  }
+
+  function llammado_tiquet_menu(){
+    //alert("Llmado directorio productos");
+              $.ajax({
+              type: "POST",
+              url: "lib/Tiquets/vistas/registro_the_tiquets.php",
+              success: function(response) {
+                  $('#contenedor_div_principal').html(response);
+              }
+          });
+  }
+
+  
+
+function llamado_menu_perfil(){
+    //alert("Llmado directorio productos");
+              $.ajax({
+              type: "POST",
+              url: "lib/menu/vistas/registro_menu_perfil.php",
+              success: function(response) {
+                  $('#contenedor_div_principal').html(response);
+              }
+          });
+  }
+  
+  function llamado_menu_inicio(){
+ 
+              $.ajax({
+              type: "POST",
+              url: "lib/Inicio/vistas/inicio.php",
+              success: function(response) {
+                  $('#contenedor_div_principal').html(response);
+              }
+          });
+  }
+  
 
 
 

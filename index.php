@@ -134,20 +134,19 @@ CUERPO DOCUMENTO
   
   
 
-  
-  <div class="login-logo">
+                <div class="login-logo">
 
- Index Proyecto base
- v1.0
-
-
-
+<img width="421" height="99" src="img/Logo.svg" class="header-logo-dark" alt="CyM Gestión Web">
  
-  </div>
+
+</div>
+ 
 
   <div class="login-box-body">
 
-    <p class="login-box-msg">Ingresar al sistema proyecto prueba</p>
+    <p class="login-box-msg">Ingresar al sistema </p>
+    <imh>
+
 <form method="POST" id="frm_login" action="<?php echo htmlspecialchars(strip_tags('lib/Usuario/controladores/UsuarioController.php'));?>">
    
 
@@ -192,4 +191,4 @@ CUERPO DOCUMENTO
 
 <script src="vistas/js/funciones_basicas.js"></script>
 </html>
-<?php echo "esta es una prueba de versionamiento";?>
+ 

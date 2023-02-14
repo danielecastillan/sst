@@ -21,7 +21,7 @@ session_start();
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>SIS consultas</title>
+  <title>C Y M WEB</title>
 
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -126,7 +126,17 @@ body {
 
 
 </head>
-
+ <script>
+    $(document).ready(function () {
+     
+    
+   
+  //llamado_menu_general(<?php echo $_SESSION["id_perfil"];?>);
+  // llamado_menu_generalcurso(<?php echo $_SESSION["id_perfil"];?>);
+   llamado_menu_general(<?php echo $_SESSION["id_perfil"];?>);
+    });
+ 
+ </script>
 <!--=====================================
 CUERPO DOCUMENTO
 ======================================-->
@@ -231,7 +241,7 @@ echo '<img src="img/usuario.png" class="user-image">';
     
     <h1>
       
-      Plataforma de Cursos</h1>
+      Plataforma de C y M</h1>
 
      
   </section>
@@ -275,7 +285,7 @@ echo '<img src="img/usuario.png" class="user-image">';
 </div>
 <footer class="main-footer">
 	
-	<strong>LH : Lineas Hospitalarias - TICS.</strong>
+	<strong>C Y M Gestion Web</strong>
 
 	 
 
@@ -287,7 +297,7 @@ echo '<img src="img/usuario.png" class="user-image">';
 
 
 <script src="js/plantilla.js"></script>
-
+<script src="lib/Usuario/js/users.js"></script>
 <script src="js/funciones_basicas_index.js"></script>
 <script src="lib/productos/js/prod_funcions.js"></script>
 <script src="lib/productos/js/pedidos_funcions.js"></script>
